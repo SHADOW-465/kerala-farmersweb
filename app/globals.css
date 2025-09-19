@@ -1,0 +1,144 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Professional dashboard color palette */
+  --background: #ffffff;
+  --foreground: #1a202c;
+  --card: #ffffff;
+  --card-foreground: #1a202c;
+  --popover: #ffffff;
+  --popover-foreground: #1a202c;
+  --primary: #2d5a5a;
+  --primary-foreground: #ffffff;
+  --secondary: #48bb78;
+  --secondary-foreground: #ffffff;
+  --muted: #f7fafc;
+  --muted-foreground: #718096;
+  --accent: #4299e1;
+  --accent-foreground: #ffffff;
+  --destructive: #e53e3e;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #f7fafc;
+  --ring: rgba(45, 90, 90, 0.2);
+  --chart-1: #48bb78;
+  --chart-2: #4299e1;
+  --chart-3: #ed8936;
+  --chart-4: #9f7aea;
+  --chart-5: #38b2ac;
+  --radius: 0.75rem;
+  /* Updated sidebar colors for dark professional theme */
+  --sidebar: #2d5a5a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #48bb78;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #4299e1;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #1a365d;
+  --sidebar-ring: rgba(255, 255, 255, 0.1);
+}
+
+.dark {
+  --background: #1a202c;
+  --foreground: #f7fafc;
+  --card: #2d3748;
+  --card-foreground: #f7fafc;
+  --popover: #1a202c;
+  --popover-foreground: #f7fafc;
+  --primary: #48bb78;
+  --primary-foreground: #1a202c;
+  --secondary: #4299e1;
+  --secondary-foreground: #1a202c;
+  --muted: #2d3748;
+  --muted-foreground: #a0aec0;
+  --accent: #4299e1;
+  --accent-foreground: #1a202c;
+  --destructive: #e53e3e;
+  --destructive-foreground: #f7fafc;
+  --border: #4a5568;
+  --input: #2d3748;
+  --ring: rgba(72, 187, 120, 0.2);
+  --chart-1: #48bb78;
+  --chart-2: #4299e1;
+  --chart-3: #ed8936;
+  --chart-4: #9f7aea;
+  --chart-5: #38b2ac;
+  --sidebar: #1a365d;
+  --sidebar-foreground: #f7fafc;
+  --sidebar-primary: #48bb78;
+  --sidebar-primary-foreground: #1a202c;
+  --sidebar-accent: #4299e1;
+  --sidebar-accent-foreground: #1a202c;
+  --sidebar-border: #2c5282;
+  --sidebar-ring: rgba(255, 255, 255, 0.1);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added custom styles for professional dashboard components */
+.kpi-card {
+  @apply bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow;
+}
+
+.gauge-chart {
+  @apply relative flex items-center justify-center;
+}
+
+.trend-chart {
+  @apply h-8 w-full;
+}
+
+.professional-sidebar {
+  @apply bg-sidebar text-sidebar-foreground border-r border-sidebar-border;
+}
