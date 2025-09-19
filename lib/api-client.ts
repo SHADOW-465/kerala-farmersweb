@@ -3,7 +3,7 @@
  * Handles all API calls to the FastAPI backend
  */
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || '/api';
 
 export interface ApiResponse<T> {
   data?: T;
@@ -140,6 +140,8 @@ class ApiClient {
   ): Promise<ApiResponse<T>> {
     try {
       const url = `${this.baseUrl}${endpoint}`;
+      console.log(`API Request: ${options.method || 'GET'} ${url}`);
+      
       const response = await fetch(url, {
         headers: {
           'Content-Type': 'application/json',
@@ -148,8 +150,11 @@ class ApiClient {
         ...options,
       });
 
+      console.log(`API Response: ${response.status} ${response.statusText}`);
+
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
+        console.error('API Error:', errorData);
         return {
           success: false,
           error: errorData.detail || `HTTP ${response.status}: ${response.statusText}`,
@@ -157,11 +162,13 @@ class ApiClient {
       }
 
       const data = await response.json();
+      console.log('API Success:', data);
       return {
         success: true,
         data,
       };
     } catch (error) {
+      console.error('API Request Error:', error);
       return {
         success: false,
         error: error instanceof Error ? error.message : 'Unknown error occurred',

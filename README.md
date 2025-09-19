@@ -1,204 +1,171 @@
-# Kerala Farming Assistant - AI-Powered Agricultural Support
+# 🌾 Kerala Farming Assistant
 
-A comprehensive AI-powered farming assistant specifically designed for Kerala farmers, featuring disease detection, crop recommendations, weather analytics, and community support.
+A comprehensive AI-powered farming assistant designed specifically for Kerala farmers. This application provides intelligent crop recommendations, disease detection, weather analytics, and community support to help farmers make informed decisions.
 
-## 🌾 Features
+## ✨ Features
 
-### Core AI Features
-- **AI-Powered Plant Disease Detection**: Upload plant images for instant disease identification using Hugging Face models
-- **Smart Crop Recommendation Engine**: ML-based recommendations considering soil, climate, and market factors
-- **AI Chatbot Assistant**: Multilingual support (English, Malayalam, Tamil, Hindi) for farming queries
-- **Intelligent Weather Analytics**: 7-day forecasts, farming alerts, and irrigation suggestions
-- **Personal Farm Profile & Analytics**: Track farm performance, crop history, and personalized insights
+### 🤖 AI-Powered Features
+- **Plant Disease Detection**: Upload images to identify plant diseases with AI
+- **Smart Crop Recommendations**: Get personalized crop suggestions based on soil and weather conditions
+- **AI Chatbot**: Multilingual support (English, Malayalam, Tamil, Hindi) for farming queries
+- **Weather Analytics**: Real-time weather data and farming recommendations
 
-### Additional Features
-- **Market Price Prediction**: Real-time price data and trend analysis for Kerala markets
-- **Soil Health Assessment Tool**: AI analysis of soil test results with improvement recommendations
-- **Smart Government Scheme Matcher**: AI-powered matching with relevant government schemes
-- **Community Knowledge Sharing**: Q&A forum, best practices, and expert network
-- **Mobile-First Design**: Responsive interface optimized for mobile devices
+### 🏡 Farm Management
+- **Farm Profile Management**: Create and manage multiple farm profiles
+- **Crop Tracking**: Monitor crop growth and health
+- **Expense Tracking**: Track farming expenses and budget
+- **Harvest Records**: Record and analyze harvest data
+- **Inventory Management**: Manage seeds, fertilizers, and equipment
+
+### 🌐 Community Platform
+- **Discussion Forum**: Ask questions and share knowledge
+- **Expert Advice**: Connect with agricultural experts
+- **Knowledge Sharing**: Access farming guides and best practices
+- **Local Events**: Stay updated with agricultural events
+
+### 📊 Market Intelligence
+- **Price Predictions**: AI-powered crop price forecasting
+- **Market Insights**: Real-time market trends and analysis
+- **Government Schemes**: Find and apply for relevant schemes
+
+## 🛠️ Technology Stack
+
+### Frontend
+- **Framework**: Next.js 14 with TypeScript
+- **UI Components**: shadcn/ui with Tailwind CSS
+- **State Management**: React Hooks
+- **Forms**: React Hook Form with Zod validation
+- **Charts**: Recharts for data visualization
+- **Icons**: Lucide React
+
+### Backend
+- **Framework**: FastAPI (Python)
+- **Database**: Supabase (PostgreSQL)
+- **AI/ML**: Hugging Face Transformers, scikit-learn
+- **Image Processing**: OpenCV, Pillow
+- **Weather Data**: OpenWeatherMap API
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ and npm/pnpm
-- Python 3.8+ (for backend)
-- Supabase account
-- Hugging Face API key
-- OpenWeatherMap API key
+- Node.js 18+ and npm
+- Python 3.8+
+- Git
 
-### Installation
+### Option 1: Automated Setup (Recommended)
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/keralafarm.git
-   cd keralafarm
-   ```
+**Windows:**
+```bash
+# Double-click start_dev.bat or run in Command Prompt
+start_dev.bat
+```
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   pnpm install
-   ```
+**Linux/Mac:**
+```bash
+# Make executable and run
+chmod +x start_dev.sh
+./start_dev.sh
+```
 
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env.local
-   # Edit .env.local with your API keys
-   ```
+### Option 2: Manual Setup
 
-4. **Set up backend** (see Backend/README.md for detailed instructions)
-   ```bash
-   cd Backend
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   pip install -r requirements.txt
-   cp env_example.txt .env
-   # Edit .env with your API keys
-   ```
+#### 1. Clone the Repository
+```bash
+git clone <repository-url>
+cd keralafarm
+```
 
-5. **Set up database**
-   - Create a Supabase project
-   - Run the SQL schema from `Backend/supabase_schema.sql`
-   - Update environment variables with Supabase credentials
+#### 2. Setup Backend
+```bash
+cd Backend
+python -m venv venv
 
-6. **Start the application**
-   ```bash
-   # Terminal 1 - Backend
-   cd Backend
-   python main_api_server.py
+# Windows
+venv\Scripts\activate
+# Linux/Mac
+source venv/bin/activate
 
-   # Terminal 2 - Frontend
-   npm run dev
-   ```
+pip install -r requirements.txt
+python run_server.py
+```
 
-The application will be available at `http://localhost:3000`
+#### 3. Setup Frontend
+```bash
+# In a new terminal
+npm install
+npm run dev
+```
 
-## 🏗️ Architecture
-
-### Frontend Stack
-- **Framework**: Next.js 14 with TypeScript
-- **UI Components**: shadcn/ui component library
-- **Styling**: Tailwind CSS for responsive design
-- **State Management**: React hooks and context
-- **API Client**: Custom API client for backend communication
-
-### Backend Stack
-- **API Framework**: FastAPI
-- **Database**: Supabase (PostgreSQL)
-- **AI/ML**: Hugging Face models, Scikit-learn
-- **Image Processing**: OpenCV, Pillow
-- **Weather API**: OpenWeatherMap
-
-### Database
-- **Primary Database**: Supabase (PostgreSQL)
-- **Features**: Row Level Security, Real-time subscriptions
-- **Tables**: Users, Farms, Crops, Disease Detections, Soil Tests, etc.
-
-## 📱 Pages and Features
-
-### 1. Dashboard
-- Farm overview and analytics
-- Quick access to all features
-- Performance metrics and KPIs
-
-### 2. Disease Detection
-- Image upload for plant disease analysis
-- AI-powered disease identification
-- Treatment and prevention recommendations
-- Detection history tracking
-
-### 3. Crop Recommendations
-- Soil analysis form
-- AI-powered crop suggestions
-- Detailed crop information
-- Seasonal planting calendar
-
-### 4. Weather Analytics
-- Current weather conditions
-- 7-day weather forecast
-- Farming-specific recommendations
-- Weather alerts and warnings
-
-### 5. AI Chatbot
-- Multilingual chat interface
-- Natural language processing
-- Quick question templates
-- Context-aware responses
-
-### 6. Farm Management
-- Farm profile creation
-- Crop tracking and management
-- Soil test records
-- Performance analytics
-
-### 7. Community
-- Q&A forum for farmers
-- Knowledge sharing platform
-- Expert advice and best practices
-- Government scheme information
+#### 4. Access the Application
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:8000
+- **API Documentation**: http://localhost:8000/api/docs
 
 ## 🔧 Configuration
 
 ### Environment Variables
 
-**Frontend (.env.local)**:
+Create a `.env.local` file in the root directory:
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:8000
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api
 ```
 
-**Backend (.env)**:
+### Backend Configuration
+
+Create a `.env` file in the `Backend` directory:
 ```env
-SUPABASE_URL=your_supabase_project_url
-SUPABASE_ANON_KEY=your_supabase_anon_key
-HUGGINGFACE_API_KEY=your_huggingface_api_key
-OPENWEATHER_API_KEY=your_openweather_api_key
+# Supabase Configuration
+SUPABASE_URL=your_supabase_url
+SUPABASE_KEY=your_supabase_anon_key
+
+# API Keys (Optional - app works with mock data)
+HUGGINGFACE_API_KEY=your_huggingface_key
+OPENWEATHER_API_KEY=your_openweather_key
+
+# Other settings
+LOG_LEVEL=INFO
+ENVIRONMENT=development
 ```
 
-## 🧪 Testing
+## 📱 Mobile Support
 
-### Frontend Testing
-```bash
-npm run test
-```
+The application is fully responsive and optimized for mobile devices. It includes:
+- Progressive Web App (PWA) features
+- Touch-friendly interface
+- Offline capabilities
+- Mobile-optimized forms
 
-### Backend Testing
-```bash
-cd Backend
-pytest
-```
+## 🌾 Kerala-Specific Features
 
-### API Testing
-Visit `http://localhost:8000/api/docs` for interactive API documentation.
+### Crops Supported
+- Rice (Kerala varieties)
+- Coconut
+- Black Pepper
+- Cardamom
+- Rubber
+- Cashew
+- Banana
+- Tapioca
 
-## 🚀 Deployment
+### Languages
+- English
+- Malayalam (മലയാളം)
+- Tamil (தமிழ்)
+- Hindi (हिन्दी)
 
-### Frontend (Vercel)
-1. Push code to GitHub
-2. Connect repository to Vercel
-3. Set environment variables
-4. Deploy automatically
+### Regions
+- Coastal Kerala
+- Midland Kerala
+- Highland Kerala
 
-### Backend (Railway/Render)
-1. Connect GitHub repository
-2. Set environment variables
-3. Deploy with automatic builds
-
-### Database (Supabase)
-- Already hosted on Supabase cloud
-- No additional deployment needed
-
-## 📊 API Endpoints
+## 🔍 API Endpoints
 
 ### Disease Detection
-- `POST /api/disease-detection` - Detect plant disease from base64 image
-- `POST /api/disease-detection/upload` - Detect disease from uploaded file
+- `POST /api/disease-detection` - Detect plant diseases from images
+- `POST /api/disease-detection/upload` - Upload image file for detection
 
 ### Crop Recommendations
-- `POST /api/crop-recommendations` - Get AI-powered crop recommendations
+- `POST /api/crop-recommendations` - Get AI-powered crop suggestions
 - `GET /api/crops/{crop_name}` - Get detailed crop information
 
 ### Weather Analytics
@@ -212,39 +179,76 @@ Visit `http://localhost:8000/api/docs` for interactive API documentation.
 
 ### Farm Management
 - `POST /api/farm-profiles` - Create farm profile
-- `GET /api/farm-profiles/{farm_id}` - Get farm profile
+- `GET /api/farm-profiles/{farm_id}` - Get farm details
+- `GET /api/farm-profiles/user/{user_id}` - Get user's farms
 - `GET /api/farm-profiles/{farm_id}/analytics` - Get farm analytics
+
+## 🧪 Testing
+
+### Backend Testing
+```bash
+cd Backend
+python -m pytest tests/
+```
+
+### Frontend Testing
+```bash
+npm run test
+```
+
+### API Testing
+Visit http://localhost:8000/api/docs for interactive API documentation.
+
+## 📦 Deployment
+
+### Backend Deployment
+1. Set up Supabase database
+2. Configure environment variables
+3. Deploy to your preferred platform (Railway, Heroku, etc.)
+
+### Frontend Deployment
+1. Build the application: `npm run build`
+2. Deploy to Vercel, Netlify, or your preferred platform
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🙏 Acknowledgments
-
-- **Hugging Face** for providing free AI models
-- **OpenWeatherMap** for weather data
-- **Kerala Agriculture Department** for farming data
-- **FastAPI** for the excellent web framework
-- **Next.js** for the React framework
-- **Supabase** for the database platform
-
-## 📞 Support
+## 🆘 Support
 
 For support and questions:
-- **GitHub Issues**: [Create an issue](https://github.com/yourusername/keralafarm/issues)
-- **Email**: support@keralafarm.app
-- **Documentation**: [API Docs](http://localhost:8000/api/docs)
+- Create an issue in the repository
+- Contact the development team
+- Check the documentation
+
+## 🗺️ Roadmap
+
+### Phase 1 (Current)
+- ✅ Basic AI features
+- ✅ Farm management
+- ✅ Community platform
+- ✅ Mobile responsiveness
+
+### Phase 2 (Planned)
+- 🔄 Advanced AI models
+- 🔄 Real-time notifications
+- 🔄 Offline support
+- 🔄 Advanced analytics
+
+### Phase 3 (Future)
+- 📋 IoT integration
+- 📋 Drone support
+- 📋 Blockchain integration
+- 📋 Advanced ML models
 
 ---
 
 **Built with ❤️ for Kerala Farmers**
-
-This application is designed to help Kerala farmers with AI-powered agricultural assistance, making farming more efficient, profitable, and sustainable.
